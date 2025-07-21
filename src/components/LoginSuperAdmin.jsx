@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 export default function LoginSuperAdmin() {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');

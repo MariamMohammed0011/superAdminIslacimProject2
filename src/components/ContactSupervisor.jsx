@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 export default function ContactSupervisor() {
+  const apiUrl = import.meta.env.VITE_API_URL;
    const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
 const handleSend = () => {

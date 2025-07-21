@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";   // استيراد useNavigate
 
 
 export default function ProfileMosque() {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [contactWatsapp, setContactWatssapp] = useState(false);
   const [showProfile, setShowProfile] = useState(true);  // للتحكم في إظهار البطاقة
  const navigate = useNavigate();   // تعريف النفيجيت
