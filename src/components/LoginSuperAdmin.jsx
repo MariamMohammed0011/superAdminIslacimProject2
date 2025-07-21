@@ -6,7 +6,7 @@ export default function LoginSuperAdmin() {
   
  const handleLogin = async () => {
   try {
-    const response = await fetch('/api/auth/login/superadmin', {
+    const response = await fetch(`${apiUrl}/mosque/auth/login/superadmin`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),

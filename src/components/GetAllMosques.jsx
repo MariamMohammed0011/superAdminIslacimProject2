@@ -9,6 +9,7 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { IoMdLogOut } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 export default function GetAllMosques() {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [addModal, setAddModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [showMenuIndex, setShowMenuIndex] = useState(null);
@@ -55,7 +56,7 @@ const handleLogout = () => {
         return;
       }
 
-      const response = await fetch("/api/mosque", {
+      const response = await fetch(`${apiUrl}/mosque`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -101,7 +102,7 @@ const getSortedMosques = () => {
         return;
       }
 
-      const response = await fetch("/api/mosque/create", {
+      const response = await fetch(`${apiUrl}/mosque/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -139,7 +140,7 @@ const getSortedMosques = () => {
       students: editMosque.students,
     };
 
-    const response = await fetch(`/api/mosque/update/${editMosque.id}`, {
+    const response = await fetch(`${apiUrl}/mosque/create/update/${editMosque.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -174,7 +175,7 @@ const handleDeleteMosque = async (id) => {
     const token = localStorage.getItem("token");
     if (!token) throw new Error("غير مصرح لك");
 
-    const response = await fetch(`/api/mosque/delete/${id}`, {
+    const response = await fetch(`${apiUrl}/mosque//delete/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
